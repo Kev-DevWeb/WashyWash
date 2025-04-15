@@ -6,6 +6,44 @@
     <title>WashyWash</title>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        /* Fondo gris para toda la página */
+body {
+    background-color: #f8f9fa; /* Gris claro */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo para el section con fondo */
+.hero-section {
+    position: relative;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden; /* Asegura que el pseudo-elemento no se desborde */
+}
+
+.hero-section::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: url('/src/banner.jpeg') no-repeat center center;
+    background-size: cover;
+    filter: blur(5px); /* Aplica el desenfoque solo al pseudo-elemento */
+    z-index: 0; /* Coloca el pseudo-elemento detrás del texto */
+}
+
+.hero-section h1 {
+    position: relative; /* Asegura que el texto esté por encima del pseudo-elemento */
+    z-index: 1;
+}
+    </style>
     <!-- Custom CSS -->
     <link href="../css/styles.css" rel="stylesheet">
 </head>
